@@ -19,7 +19,7 @@ int main()
         if(j==1)
 		printf("语法错误，字符串没有判断符号\n");
 		else
-		printf("在第%d列为判断符号\n",j);
+		printf("语法正确，在第%d列为判断符号\n",j);
 		        k=j;
                 while(A[k]!=';')
                 {
@@ -28,7 +28,7 @@ int main()
 			    if(k>=99)
 			    printf("语法错误，字符串没有英文分号\n");
 			    else
-			    printf("在第%d列为英文分号\n",k+1);
+			    printf("语法正确，在第%d列为英文分号\n",k+1);
    
     }
 	else
