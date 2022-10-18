@@ -6,7 +6,7 @@
 int main()
 {
 	char a[50];
-	int i, j;
+	int i, j, l = 0;
 	int k=0;
 	scanf("%s", &a);
 	j = int(strlen(a));
@@ -14,18 +14,21 @@ int main()
 	{
 		if (a[i] >= '0' && a[i] <= '9')
 			continue;
-		else if (a[i] >= '<' && a[i] <= '>')
+		else if (l==0 &&  a[i] >= '<' && a[i] <= '>')
+		{
 			k = i;
-		else if(i==k+1 && a[i] =='=')
+			l++;
+		}
+		else if(l==1 && i==k+1 && a[i] =='=')
 			continue;
 		else if (a[i] == ';' && a[i + 1] == '\0')
 		{
-			printf("Óï·¨ÕýÈ·");
+			printf("è¯­æ³•æ­£ç¡®");
 			break;
 		}
 		else
 		{
-			printf("Óï·¨´íÎó£¬ÔÚµÚ%dÁÐ", i + 1);
+			printf("è¯­æ³•é”™è¯¯ï¼Œåœ¨ç¬¬%dåˆ—", i + 1);
 			break;
 		}
 	}
