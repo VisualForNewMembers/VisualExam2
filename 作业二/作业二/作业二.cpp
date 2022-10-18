@@ -31,7 +31,7 @@ int main()
                     }
 		else if(l==1 && i==k+1 && a[i] =='=')
 			continue;
-		else if (a[i-1]>='0' && a[i]<='9' && a[i] == ';' && a[i + 1] == '\0')
+		else if (a[i-1]>='0' && a[i-1]<='9' && a[i] == ';' && a[i + 1] == '\0')
 		{
 			printf("语法正确");
 			break;
