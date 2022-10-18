@@ -14,7 +14,7 @@ int main()
 	{
                 if(i==0 && a[i]>='<' && a[i]<='>')
                   {
-                        print("语法错误，第一个不是数字");
+                        print("语法错误，第一个没有数字");
                          break;
                    }
 		else if (a[i] >= '0' && a[i] <= '9')
@@ -26,7 +26,7 @@ int main()
 		}
                  else if(l==1 && i==k+1 && a[i]==';')
                    {
-                        printf("语法错误，倒数第二个不是数字");
+                        printf("语法错误，倒数第二个没有数字");
                          break;
                     }
 		else if(l==1 && i==k+1 && a[i] =='=')
