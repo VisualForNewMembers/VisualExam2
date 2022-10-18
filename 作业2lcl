@@ -1,0 +1,104 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int z=0;
+int search1(string b, int q) 
+{
+	int t, f= 1;
+	for (int i = 0; i <= q - 1; i++) 
+	{
+		if (b[i] == '>' || b[i] == '<') 
+		{
+			t = i;
+			for (int j = t - 1, k = t+ 1; j >= 0 && k < q - 2; j--, k++) 
+			{
+				if (!(isdigit(b[j]))) {
+					cout << "语法错误，在第 j + 1 列" << endl;
+					f= 0;
+				}
+				else if (!(isdigit(b[k]))) {
+					cout << "语法错误，在第k + 1 列" << endl;
+					f= 0;
+				}
+			}
+		}
+	}
+	return f;
+}
+int search2(string b, int q)
+{
+	int t, f = 1;
+	for (int i = 0; i <=q - 1; i++)
+	{
+		if ((b[i] == '>' && b[i + 1] == '=') || (b[i] == '<' && b[i + 1] == '=')|| (b[i] == '=' && b[i + 1] == '=')) 
+		{
+			t = i;z= 1;
+			for (int j = t- 1, k = t + 2; j >= 0 && k < q - 2; j--, k++)
+		    {
+				if (!(isdigit(b[j])))
+			    {
+					cout << "语法错误，在第 j + 1 列" << endl;
+					f = 0;
+				}
+				else if (!(isdigit(b[k]))) 
+				{
+					cout << "语法错误，在第 k + 1 列" << endl;
+					f = 0;
+				}
+			}
+		}
+	}
+	return f;
+}
+int search3(string b, int q) 
+{
+	int f = 1;
+	if (b[q-2]!= ';') {
+		cout << "语法错误,在第q - 1 列" << endl;
+		f= 0;
+	}
+	else if (b[q- 2] == ';' && !isdigit(b[q- 3])) 
+	{
+		cout << "语法错误,在第q - 2 列和第 q - 1列之间" << endl;
+		f = 0;
+	}
+	return f;
+}
+int main()
+{
+	cout << "请输入一个字符串" << endl;
+	cout << "<自然数><判断符号><自然数><英文分号> " << endl;
+	string a, b;
+	int q, f1, f2, f3, s=0;
+	b = '\0';
+	cin >> a;
+	b = a + b;
+	q= b.length();
+	f2= search2(b, q);
+	if (!z)
+	{
+		f1= search1(b, q);
+	}
+	else s = 1;
+	f3= search3(b, q);
+	
+	if (s == 1) 
+	{
+		if (f2  && f3) 
+		{
+			cout << "语法正确" << endl;
+			system("pause");
+			return 0;
+		}
+	}
+	else 
+	{
+		if (f1 && f2 && f3) 
+		{
+			cout << "语法正确" << endl;
+			system("pause");
+			return 0;
+		}
+	}
+}
+  
