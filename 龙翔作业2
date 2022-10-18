@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int b,g,d ;
+	int q, w, e;
+	q = w = e = 1;
+	d = 0;
+	char a[99] = {};
+	cin >> a;
+	for (g = 0; g <= 99; g++) {
+		if (a[g] != NULL) { d++; }
+	}
+	
+
+	for (b = 0; b <= d; b++) {
+		if (a[b] == (char)60 || a[b] == (char)62||a[b]==(char)61) { break; }
+		}
+
+		
+	if (a[b] == (char)60 || a[b] == (char)62) {
+		if (a[b + 1] == (char)60 || a[1 + b] == (char)62)
+		{
+			q = 0;
+			cout << "语法错误，在第" << b + 2 << "列";
+		}
+	}
+	else if (a[b] == (char)61) {
+		if (a[1 + b] != (char)61)
+		{
+			q = 0;
+			cout << "语法错误，在第" << b + 2 << "列";
+
+		}
+		
+		
+	}
+	if (a[d-2] != (char)59) {
+		q = 0;
+		cout << "语法错误，在第" << d-1 << "列后缺少英文分号";
+	}
+	if(q==1) { cout << "语法正确"; }
+	
+
+	
+	system("pause");
+	return 0;
+}
+
